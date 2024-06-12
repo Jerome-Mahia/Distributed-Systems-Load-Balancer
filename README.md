@@ -24,15 +24,15 @@ In this project, we conduct an analysis of a load balancer implemented using con
 
 ## Tasks
 
-1. **1: Distribution of Requests**
+ **1: Distribution of Requests**
    - Ability to send requests to /home and /heartbeat and receive Json response
    - ![Cheese](./images/home.png)
    - ![Cheese](./images/heartbeat.png)
 
-2. **2: Hash Function**
+**2: Hash Function**
    - This block of code defines the hash functions and implements the Consistent Hashing class, which is responsible for mapping requests to server containers based on their hash values and maintaining the virtual server mappings to ensure balanced load distribution.
 
-3. **3: Load Balancer Scalability**
+**3: Load Balancer Scalability**
    - **Server replicas**: request the replica endpoint to view number of replica servers.
    - **Observations**:
    - ![Cheese](./images/replicas.png)
@@ -48,7 +48,7 @@ In this project, we conduct an analysis of a load balancer implemented using con
 
 
 
-4. **4: Analysis**
+ **4: Analysis**
    - **Description**: Test the load balancer's scalability by varying the number of server containers.
    - ![Cheese](./images/n=3.png)
    - ![Cheese](./images/n=2-6.png)
