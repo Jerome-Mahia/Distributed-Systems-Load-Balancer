@@ -72,6 +72,40 @@ python server.py
 
 **2: Hash Function**
    - This block of code defines the hash functions and implements the Consistent Hashing class, which is responsible for mapping requests to server containers based on their hash values and maintaining the virtual server mappings to ensure balanced load distribution.
+    ### Consistent Hashing Load Balancer Algorithm
+
+#### Inputs:
+- `NUM_SLOTS`: Total number of slots.
+- `K`: Number of virtual servers per container.
+- `server_replicas`: List of initial servers.
+
+#### Hash Functions:
+
+1. **Request Hashing**
+   - **Function**: `hash_request(request_path)`
+   - **Description**: Computes `hash(request_path) % (NUM_SLOTS * 2)`.
+
+2. **Virtual Server Hashing**
+   - **Function**: `hash_virtual_server(server_id, j)`
+   - **Description**: Computes `(hash(server_id) + j + 2 * j + 25) % (NUM_SLOTS * 2)`.
+
+#### Class: `ConsistentHashing`
+
+1. **Initialization**
+   - Initializes `servers` list.
+
+2. **Add Server**
+   - **Method**: `add_server(server_id)`
+   - Adds `K` virtual servers using `hash_virtual_server`.
+
+3. **Get Server**
+   - **Method**: `get_server(request_path)`
+   - Maps request to closest server using `hash_request`.
+
+#### Steps:
+
+1. Initialize `consistent_hashing`.
+2. Add servers from `server_replicas` using `consistent_hashing.add_server(server_id)`. 
 
 **3: Load Balancer Scalability**
    - **Server replicas**: request the replica endpoint to view number of replica servers.
@@ -101,6 +135,15 @@ python server.py
    - Trigger failure using the server failure endpoint
    - ![Cheese](./images/serverfailure1.png)
    - ![Cheese](./images/serverfailure2.png)
+
+     ## Members
+     
+  - 144915 Jerome Mahia
+  - 145351 Kihanya Mungai
+  - 145835 Humphrey James
+  - 145182 Emmanuel Omondi
+    
+    
 ---
 
 
