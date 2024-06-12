@@ -22,6 +22,48 @@ In this project, we conduct an analysis of a load balancer implemented using con
 
 ---
 
+## Installation
+
+### Prerequisites
+
+- Python 3.x
+- Flask
+- Requests library (for testing purposes)
+
+### Installation Steps
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/your-username/load-balancer-analysis.git
+    cd load-balancer-analysis
+    
+
+2. Create a virtual environment and activate it:
+
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate
+    ```
+
+3. Install the required dependencies:
+
+    ```bash
+    pip install Flask requests
+    ```
+
+---
+
+## Usage
+
+### Running the Server
+
+Start the Flask server:
+
+```bash
+python your_flask_app.py
+```
+
 ## Tasks
 
  **1: Distribution of Requests**
