@@ -35,8 +35,7 @@ In this project, we conduct an analysis of a load balancer implemented using con
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/load-balancer-analysis.git
-    cd load-balancer-analysis
+    git clone https://github.com/Jerome-Mahia/Distributed-Systems-Load-Balancer.git
     
 
 2. Create a virtual environment and activate it:
@@ -61,7 +60,7 @@ In this project, we conduct an analysis of a load balancer implemented using con
 Start the Flask server:
 
 ```bash
-python your_flask_app.py
+python server.py
 ```
 
 ## Tasks
