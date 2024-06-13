@@ -1,0 +1,23 @@
+# Use the official Python image as base image
+FROM python:3.9-slim
+
+# Set environment variables
+ENV SERVER_CONTAINERS=3 \
+    NUM_SLOTS=512 \
+    NUM_VIRTUAL_SERVERS=9
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the load balancer Python script into the container
+COPY loadbalancer.py .
+
+# Install Flask and requests
+RUN pip install flask requests
+
+# Expose port 5000
+EXPOSE 5000
+
+# Command to run the load balancer when the container starts
+CMD ["python3", "load_balancer.py"]
+

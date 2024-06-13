@@ -1,0 +1,37 @@
+version: '3'
+services:
+  load_balancer:
+    build:
+      context: .
+      dockerfile: loadbalancer_docker
+    ports:
+      - "5000:5000"
+    environment:
+      - SERVER_CONTAINERS=3
+      - NUM_SLOTS=512
+      - NUM_VIRTUAL_SERVERS=9
+    depends_on:
+      - server1
+      - server2
+      # Add dependencies for other server replicas as needed
+
+  server1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - SERVER_ID=1
+    ports:
+      - "5001:5000"
+
+  server2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - SERVER_ID=2
+    ports:
+      - "5002:5000"
+
+  # Add more server replicas as needed
+
